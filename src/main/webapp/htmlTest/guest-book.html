@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Guestbook Example</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+
+        a {
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+
+        h2 {
+            color: darkorange;
+        }
+
+        p {
+            margin-top: 15px;
+        }
+
+        .message-container {
+            margin-top: 20px;
+        }
+
+        .message-body {
+            border: 1px solid orange;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message-header {
+            height: 30px;
+            background-color: orange;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .message-buttons {
+            position: absolute;
+            right: 20px;
+        }
+
+        .btn {
+            background-color: orange;
+        }
+    </style>
+    <script>
+
+        $(document).on('click', 'a.edit-btn', function () {
+            var id = $(this).parent().parent().parent().parent().attr("id");
+            alert(id);
+        });
+
+        $(document).ready(function () {
+
+            $("#input-btn").click(function () {
+                var id = "2";
+                var name = "Andrii";
+                var message = "This project was created for demonstrating of my programming skills";
+
+                $("#message-area").append(
+                        "<div class=\"col-xs-12 message-container\" id=\"" + id + "\">" +
+                        "<div class=\"col-xs-12 message-header\">" +
+                        "<div class=\"col-xs-6\">" +
+                        "<h4 class=\"message-name\">" + name + "</h4>" +
+                        "</div>" +
+                        "<div class=\"message-buttons\">" +
+                        "<h4><a class=\"edit-btn\">edit |</a><a class=\"edit-btn\"> delete</a></h4>" +
+                        "</div>" +
+                        "</div>" +
+                        "<div class=\"col-xs-12 message-body\">" +
+                        "<p>" + message + "</p>" +
+                        "</div>" +
+                        "</div>"
+                )
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+
+<div class="container col-xs-8 col-lg-offset-2">
+    <h2>Taxi Project guest book</h2>
+    <h4> I will be happy to see any comments and suggestions for this project</h4>
+    <hr>
+    <div class="row" id="message-area">
+        <div class="col-xs-12 message-container" id="1">
+            <div class="col-xs-12 message-header">
+                <div class="col-xs-6">
+                    <h4 class="message-name">Golets Andrii:</h4>
+                </div>
+                <div class="message-buttons">
+                    <h4><a class="edit-btn">edit |</a><a class="delete-btn"> delete</a></h4>
+                </div>
+            </div>
+            <div class="col-xs-12 message-body">
+                <p> This project was created for demonstrating of my programming skills </p>
+            </div>
+        </div>
+        <div class="col-xs-12 message-container" id="2">
+            <div class="col-xs-12 message-header">
+                <div class="col-xs-6">
+                    <h4 class="message-name">Golets Andrii2:</h4>
+                </div>
+                <div class="message-buttons">
+                    <h4><a class="edit-btn">edit |</a><a class="delete-btn"> delete</a></h4>
+                </div>
+            </div>
+            <div class="col-xs-12 message-body">
+                <p> This project was created for demonstrating 2 of my programming skills </p>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <form class="col-xs-12 input-container">
+            <div class="form-group col-xs-6">
+                <label for="name-input">Please enter your name:</label>
+                <input class="form-control" id="name-input">
+            </div>
+            <div class="form-group col-xs-12">
+                <label for="input">You can print your comment here:</label>
+                <textarea class="form-control" rows="5" id="input"></textarea>
+            </div>
+            <div class="form-group col-xs-12">
+                <button class="btn" type="button" id="input-btn">Send comment</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

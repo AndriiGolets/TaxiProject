@@ -1,0 +1,12 @@
+.idea/
+
+out/
+
+target/
+
+*.iml
+
+*.log
+Base/src/test/
+Server/Server/
+Server/src/main/java/ua/taxi/server/rest/test/
